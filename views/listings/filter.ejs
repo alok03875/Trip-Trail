@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Products</title>
+</head>
+<body>
+    <h1>Filter Products</h1>
+    
+    <!-- Filter Form -->
+    <form action="/filter" method="GET">
+        <div>
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" placeholder="Enter category">
+        </div>
+
+        <div>
+            <label for="minPrice">Min Price:</label>
+            <input type="number" id="minPrice" name="minPrice" placeholder="Enter minimum price">
+        </div>
+
+        <div>
+            <label for="maxPrice">Max Price:</label>
+            <input type="number" id="maxPrice" name="maxPrice" placeholder="Enter maximum price">
+        </div>
+
+        <button type="submit">Filter Products</button>
+    </form>
+
+    <!-- Filtered Products -->
+    <h2>Filtered Products</h2>
+    <ul>
+        <% products.forEach(product => { %>
+            <li><%= product.name %> - $<%= product.price %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
